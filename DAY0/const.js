@@ -18,5 +18,11 @@ const c=pi&&nok
 console.log(c)//false 
 const d=nok&&pi
 console.log(d)//false
+const e =nok ||pi 
+console.log(e)// 3.14
+const f =pi||nok|| 3.14
+console.log(f)
+
+
 
 
