@@ -29,8 +29,12 @@ console.log(a +" " + b +" "+ d);
  let j = false 
  console.log(i && j) 
  console.log (i && !j )
- console.log ( a && i)
- console.log (a && j)// js string are truthy ( vraie)
+ console.log ( a && i)//true
+  console.log ( i && a)// welcome 
+ console.log (a && j)// js string are truthy (false)
+ console.log(j && a)//false
 console.log ( ""&& i)// le vide 
 let y =null 
 console.log(y && i)// null 
+console.log (d&&j) // false 
+console.log(j&&d)// false 
