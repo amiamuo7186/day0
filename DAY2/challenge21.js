@@ -29,11 +29,12 @@ function construireTriangle(taille){
     let ligne=""
     for(let i=0;i<=taille;i++){
         ligne=ligne+i;
-        return(ligne)
+        console.log(ligne)
 
     }
+    return ""
 }
-console.log (construireTriangle(4))
+construireTriangle(4)
 
 // challenge 4
 function addition(a,b){
