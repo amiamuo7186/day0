@@ -1,8 +1,8 @@
 // level 1
 // length & Uppercase 
 let str="bonjour tous le monde"
-console.log(str.length)// 21
-console.log(str.toUpperCase())//BONJOUR TOUS LE MONDE
+// console.log(str.length)// 21
+// console.log(str.toUpperCase())//BONJOUR TOUS LE MONDE
 
 // first & last char
 function chercher(nom){
@@ -10,11 +10,11 @@ function chercher(nom){
     let b=nom[nom.length-1]
     return(`first characters is ${a} and the last is ${b}`)
 }
-console.log(chercher(str))//first characters is b and the last is e
+// console.log(chercher(str))//first characters is b and the last is e
 
 // word Replacer 
 let sent="I love apples"
-console.log(sent.replace('apples','bananas'))// I love bananas
+// console.log(sent.replace('apples','bananas'))// I love bananas
 
 // level 2 
 // palindrome check 
@@ -38,7 +38,7 @@ function palindrome(nom){
     
 }
 
-console.log(palindrome("level"))// true 
+// console.log(palindrome("level"))// true 
 
 // String Reversal
 function reverse(nom){
@@ -69,7 +69,7 @@ function countChar(str, char){
 return count
 
 }
-console.log(countChar("hello","l"))// 2
+// console.log(countChar("hello","l"))// 
 
 // level 3
 // Capitalize words 
@@ -86,7 +86,7 @@ function Capitalize(str){
     }
     return str
 }
-console.log(Capitalize("bonjour tous le monde"))// Bonjour Tous Le Monde
+// console.log(Capitalize("bonjour tous le monde"))// Bonjour Tous Le Monde
 
 // String Compressor
 function Compressor(str){
@@ -118,31 +118,39 @@ function Compressor(str){
     
     return b 
 }
-console.log(Compressor("bbbaaoooo"))
+// console.log(Compressor("bbbaaoooo"))
 
 // // Anagram checker 
 function  anagram(str, base_check){
+    str=str.toUpperCase()
+    base_check=str.toUpperCase()
     let ok=false 
+    let save= base_check
     if (str.length !== base_check.length){
          ok =false 
     } 
     else{
         
         for (let i=0;i<str.length;i++){
-            for(let j=0;j<base_check.length;j++){
-                if (str[i] ==base_check[j]){
+            ok=false 
+            for(let j=0;j<save.length;j++){
+                if (str[i] == save[j]){
                     ok=true ;
+                    save= save.slice(0,j)+ save.slice(j+1)
                     break
                 }
+         
             }
+
+            if (!ok){ //!false = true
+                return "ce n'est pas un anagram "
+            }
+            
         }
     }
     
-    if (ok===true){
-        return ("cest un anagram ")
-    }
-    else {
-        return ("ce n'est pas un anagram")} 
+    if (ok)
+        return "cest un anagram "
     
 }
-console.log (anagram("listan","silent"))
+console.log (anagram("listn","silent"))
